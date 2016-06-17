@@ -22,6 +22,9 @@ pyflakes:
 
 pylint:
     run: true
+    disable:
+        - W0142 # * or ** magic
+        - W0141 # filter()
 
 pyroma:
     #check packaging
