@@ -1,7 +1,7 @@
 graddfil/desktop-grabber-aggregator
 -----------------------------------
 
-|landscape_io| |agpl-v3|
+|landscape_io| |codeclimate_com| |agpl-v3|
 
 A reference implementation of graddfil desktop aggregator.
 
@@ -14,3 +14,6 @@ This project is licensed under AGPLv3+.
 .. |landscape_io| image:: https://landscape.io/github/graddfil/desktop-grabber-aggregator/master/landscape.svg?style=flat
         :target: https://landscape.io/github/graddfil/desktop-grabber-aggregator/master
         :alt: Code Health
+.. |codeclimate_com| image:: https://codeclimate.com/github/graddfil/desktop-grabber-aggregator/badges/gpa.svg
+        :target: https://codeclimate.com/github/graddfil/desktop-grabber-aggregator
+        :alt: Code Climate
