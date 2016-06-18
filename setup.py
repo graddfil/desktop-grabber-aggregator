@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""A reference implementation of graddfril desktop aggregator."""
 
 from setuptools import setup
 

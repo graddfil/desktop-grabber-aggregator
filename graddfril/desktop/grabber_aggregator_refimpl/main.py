@@ -1,3 +1,4 @@
+"""Interactive part / CLI."""
 import argparse
 import getpass
 import confuse
@@ -5,16 +6,21 @@ from graddfril.desktop.grabber_aggregator_refimpl.matrix import MatrixClient
 
 
 def update_config(config: confuse.Configuration):
+    """Update the config file."""
     open(config.user_config_path(), 'w').write(config.dump())
 
 
 class PasswordPromptAction(argparse.Action):
+    """Securely prompt a password."""
+
     def __call__(self, parser, namespace, values, option_string=None):
+        """Use getpass() to set self.dest passed by argparse to input password."""
         password = getpass.getpass()
         setattr(namespace, self.dest, password)
 
 
 def main():
+    """CLI entrypoint."""
     config = confuse.Configuration('graddfril')
 
     parser = argparse.ArgumentParser(description='Graddfril grabber aggregator')
