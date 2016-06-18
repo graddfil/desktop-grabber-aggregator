@@ -21,14 +21,6 @@ class MatrixClient:
         self.api = MatrixHttpApi(self.server, token=self.token)
         self.api.initial_sync()
 
-    @classmethod
-    def from_config(cls, config):
-        """Construct a new MatrixClient from confuse config."""
-        server = config['server'].get()
-        room = config['room'].get()
-        token = config['token'].get()
-
-        return cls(server, token, room)
 
     def send_event(self, event_type: str, content: dict):
         """Send an event of arbitrary type."""
