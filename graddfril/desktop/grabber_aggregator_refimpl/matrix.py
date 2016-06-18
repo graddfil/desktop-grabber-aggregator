@@ -21,6 +21,7 @@ class MatrixClient:
         self.api = MatrixHttpApi(self.server, token=self.token)
         self.api.initial_sync()
 
+
     def send_event(self, event_type: str, content: dict):
         """Send an event of arbitrary type."""
         return self.api.send_message_event(self.room, event_type, content)
