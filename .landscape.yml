@@ -13,6 +13,8 @@ mccabe:
 pep257:
     # docstring checking
     run: true
+    disable:
+        - D203 # https://github.com/PyCQA/pydocstyle/pull/91
 
 pep8:
     run: true
@@ -25,6 +27,7 @@ pylint:
     disable:
         - W0142 # * or ** magic
         - W0141 # filter()
+        - too-few-public-methods
 
 pyroma:
     #check packaging
