@@ -1,7 +1,7 @@
 graddfril/desktop.grabber-aggregator-refimpl
 --------------------------------------------
 
-|landscape_io| |agpl-v3|
+|landscape_io| |versioneye_com| |agpl-v3|
 
 A reference implementation of graddfril desktop aggregator.
 
@@ -14,3 +14,6 @@ This project is licensed under AGPLv3+.
 .. |landscape_io| image:: https://landscape.io/github/graddfril/desktop.grabber-aggregator-refimpl/master/landscape.svg?style=flat
         :target: https://landscape.io/github/graddfril/desktop.grabber-aggregator-refimpl/master
         :alt: Code Health
+.. |versioneye_com| image:: https://www.versioneye.com/user/projects/576509630735400045bbfcc1/badge.svg
+        :target: https://www.versioneye.com/user/projects/576509630735400045bbfcc1
+        :alt: Dependency Status
