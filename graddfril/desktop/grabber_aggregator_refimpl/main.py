@@ -2,7 +2,7 @@
 import argparse
 import getpass
 import confuse
-from graddfril.desktop.grabber_aggregator_refimpl.matrix import MatrixClient
+from graddfril.desktop.grabber_aggregator_refimpl.matrix import MatrixClient  # pylint:disable=import-error
 
 
 def update_config(config: confuse.Configuration):
@@ -37,9 +37,9 @@ def main():
     if args.password:
         persistent_args['token'] = MatrixClient.get_token(args.server, args.user, args.password)['access_token']
 
-    for k, v in persistent_args.items():
-        if v is not None:
-            config[k] = v
+    for k, val in persistent_args.items():
+        if val is not None:
+            config[k] = val
 
     if args.save_config:
         update_config(config)
