@@ -21,7 +21,6 @@ class MatrixClient:
         self.api = MatrixHttpApi(self.server, token=self.token)
         self.api.initial_sync()
 
-
     def send_event(self, event_type: str, content: dict):
         """Send an event of arbitrary type."""
         return self.api.send_message_event(self.room, event_type, content)
@@ -29,6 +28,4 @@ class MatrixClient:
     @staticmethod
     def get_token(server: str, user: str, password: str) -> str:
         """Get an access_token via password login."""
-        return MatrixHttpApi(server).login("m.login.password",
-                                           user=user,
-                                           password=password)
+        return MatrixHttpApi(server).login("m.login.password", user=user, password=password)
