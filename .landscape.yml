@@ -1,4 +1,5 @@
 strictness: veryhigh
+test-warnings: yes
 doc-warnings: yes
 max-line-length: 200
 
