@@ -1,6 +1,7 @@
 """Wrappers around Matrix."""
 
 from matrix_client.api import MatrixHttpApi
+from requests.exceptions import ConnectionError
 
 
 class MatrixClient:
@@ -19,11 +20,19 @@ class MatrixClient:
         self.room = room
 
         self.api = MatrixHttpApi(self.server, token=self.token)
-        self.api.initial_sync()
+
 
     def send_event(self, event_type: str, content: dict):
         """Send an event of arbitrary type."""
         return self.api.send_message_event(self.room, event_type, content)
+
+
+    def try_sync(self):
+        try:
+            self.api.initial_sync()
+            return True
+        except ConnectionError:
+            return False
 
     @staticmethod
     def get_token(server: str, user: str, password: str) -> str:

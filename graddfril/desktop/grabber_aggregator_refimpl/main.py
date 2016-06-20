@@ -2,8 +2,9 @@
 import argparse
 import getpass
 import confuse
-from graddfril.desktop.grabber_aggregator_refimpl.matrix import MatrixClient  # pylint:disable=import-error
-
+import appdirs
+from time import sleep
+from matrix import MatrixClient  # pylint:disable=import-eoferror
 
 def update_config(config: confuse.Configuration):
     """Update the config file."""
@@ -45,9 +46,12 @@ def main():
         update_config(config)
 
     matrix = MatrixClient(*[config[name].get() for name in ['server', 'token', 'room']])
-    matrix.send_event("m.room.message", {"msgtype": "m.text", "body": "Hello world!"})
-    matrix.send_event("graddfril.event", {"msgtype": "graddfril.keypress", "key": "h"})
 
+    while True:
+        if matrix.try_sync():
+            matrix.send_event("m.room.message", {"msgtype": "m.text", "body": "Hello world!"})
+            matrix.send_event("graddfril.event", {"msgtype": "graddfril.keypress", "key": "h"})
+        sleep(100)
 
 if __name__ == '__main__':
     main()
