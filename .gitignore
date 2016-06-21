@@ -20,3 +20,5 @@ lib64
 *.sw?
 
 devenv
+
+.tox
