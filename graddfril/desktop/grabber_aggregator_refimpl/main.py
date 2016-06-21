@@ -2,7 +2,7 @@
 import argparse
 import getpass
 import confuse
-from graddfril.desktop.grabber_aggregator_refimpl.matrix import MatrixClient  # pylint:disable=import-error
+from graddfril.desktop.grabber_aggregator_refimpl.matrix import MatrixClient
 
 
 def update_config(config: confuse.Configuration):
