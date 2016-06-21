@@ -1,6 +1,6 @@
 virtualenv>=15.0.2
 tox>=2.3.1
-prospector>=0.11.7
+prospector[with_pyroma,with_vulture]>=0.11.7
 yapf>=0.10.0
 pre-commit>=0.8.2
 -r requirements-tests.txt
